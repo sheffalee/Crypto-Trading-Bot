@@ -51,7 +51,7 @@ st.table(BTC)
 st.line_chart(BTC['Close'])
 # Determine and display Buy/Sell action for Bitcoin
 btc_action = determine_action(BTC)
-st.markdown("Prediction:", btc_action, unsafe_allow_html=True)
+st.markdown(btc_action, unsafe_allow_html=True)
 
 # Ethereum
 st.write("Ethereum ($)")
@@ -61,7 +61,7 @@ st.table(ETH)
 st.line_chart(ETH['Close'])
 # Determine and display Buy/Sell action for Ethereum
 eth_action = determine_action(ETH)
-st.markdown("Prediction:", eth_action, unsafe_allow_html=True)
+st.markdown(eth_action, unsafe_allow_html=True)
 
 # Litecoin
 st.write("Litecoin ($)")
@@ -71,5 +71,5 @@ st.table(LTC)
 st.line_chart(LTC['Close'])
 # Determine and display Buy/Sell action for Litecoin
 ltc_action = determine_action(LTC)
-st.markdown("Prediction:",ltc_action, unsafe_allow_html=True)
+st.markdown(ltc_action, unsafe_allow_html=True)
 
