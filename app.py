@@ -72,12 +72,4 @@ st.line_chart(LTC['Close'])
 # Determine and display Buy/Sell action for Litecoin
 ltc_action = determine_action(LTC)
 st.markdown(ltc_action, unsafe_allow_html=True)
-# Litecoin
-st.write("Litecoin ($)")
-# Display dataframe
-st.table(LTC)
-# Display a chart
-st.bar_chart(LTCHis.Close)
-# Determine and display Buy/Sell action for Litecoin
-ltc_action = determine_action(LTC)
-st.write(f"Prediction: {ltc_action}")
+
