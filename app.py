@@ -35,33 +35,43 @@ ETH = format_date_column(ETH)
 LTC = format_date_column(LTC)
 # Function to determine Buy or Sell based on the trend
 def determine_action(data):
-    if data['Close'].iloc[-1] > data['Close'].iloc[0]:
-        return "Sell"
-    elif data['Close'].iloc[-1] < data['Close'].iloc[0]:
-        return "Buy"
+    change = data['Close'].iloc[-1] - data['Close'].iloc[0]
+    if change > 0:
+        return "<div style='border:1px solid black;padding:10px;color:green'>Sell</div>"
+    elif change < 0:
+        return "<div style='border:1px solid black;padding:10px;color:red'>Buy</div>"
     else:
-        return "Hold"
+        return "<div style='border:1px solid black;padding:10px;color:blue'>Hold</div>"
 
 # Bitcoin
 st.write("Bitcoin ($)")
 # Display dataframe
 st.table(BTC)
 # Display a chart
-st.bar_chart(BTCHis.Close)
+st.line_chart(BTC['Close'])
 # Determine and display Buy/Sell action for Bitcoin
 btc_action = determine_action(BTC)
-st.write(f"Prediction: {btc_action}")
+st.markdown(btc_action, unsafe_allow_html=True)
 
 # Ethereum
 st.write("Ethereum ($)")
 # Display dataframe
 st.table(ETH)
 # Display a chart
-st.bar_chart(ETHHis.Close)
+st.line_chart(ETH['Close'])
 # Determine and display Buy/Sell action for Ethereum
 eth_action = determine_action(ETH)
-st.write(f"Prediction: {eth_action}")
+st.markdown(eth_action, unsafe_allow_html=True)
 
+# Litecoin
+st.write("Litecoin ($)")
+# Display dataframe
+st.table(LTC)
+# Display a chart
+st.line_chart(LTC['Close'])
+# Determine and display Buy/Sell action for Litecoin
+ltc_action = determine_action(LTC)
+st.markdown(ltc_action, unsafe_allow_html=True)
 # Litecoin
 st.write("Litecoin ($)")
 # Display dataframe
