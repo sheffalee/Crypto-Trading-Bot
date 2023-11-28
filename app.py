@@ -1,4 +1,5 @@
-
+import yfinance as yf
+import streamlit as st
 # Titles and subtitles
 st.title("Crypto Trading Bot")
 
