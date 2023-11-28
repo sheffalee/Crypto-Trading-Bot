@@ -37,11 +37,11 @@ LTC = format_date_column(LTC)
 def determine_action(data):
     change = data['Close'].iloc[-1] - data['Close'].iloc[0]
     if change > 0:
-        return "<div style='border:1px solid black;padding:10px;color:green'>Sell</div>"
+        return "<div style='border:1px solid black;padding:10px;color:green;text-align:center;font-weight:bold'>Sell</div>"
     elif change < 0:
-        return "<div style='border:1px solid black;padding:10px;color:red'>Buy</div>"
+        return "<div style='border:1px solid black;padding:10px;color:red;text-align:center;font-weight:bold'>Buy</div>"
     else:
-        return "<div style='border:1px solid black;padding:10px;color:blue'>Hold</div>"
+        return "<div style='border:1px solid black;padding:10px;color:blue;text-align:center;font-weight:bold'>Hold</div>"
 
 # Bitcoin
 st.write("Bitcoin ($)")
